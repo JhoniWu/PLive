@@ -1,0 +1,3 @@
+com.prayer.live.framework.mq.starter.producer.RocketMQProducerConfig
+com.prayer.live.framework.mq.starter.properties.RocketMQProducerProperties
+com.prayer.live.framework.mq.starter.properties.RocketMQConsumerProperties

@@ -1,0 +1,10 @@
+com.prayer.live.framework.redis.starter.config.RedisConfig
+com.prayer.live.framework.redis.starter.key.UserProviderCacheKeyBuilder
+com.prayer.live.framework.redis.starter.key.MsgProviderCacheKeyBuilder
+com.prayer.live.framework.redis.starter.key.AccountProviderCacheKeyBuilder
+com.prayer.live.framework.redis.starter.key.ImCoreServerProviderCacheKeyBuilder
+com.prayer.live.framework.redis.starter.key.ImProviderCacheKeyBuilder
+com.prayer.live.framework.redis.starter.key.GiftProviderCacheKeyBuilder
+com.prayer.live.framework.redis.starter.key.BankProviderCacheKeyBuilder
+com.prayer.live.framework.redis.starter.key.LivingProviderCacheKeyBuilder
+com.prayer.live.framework.redis.starter.config.RedissonClientConfig
