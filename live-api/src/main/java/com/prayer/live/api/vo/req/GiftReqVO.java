@@ -1,10 +1,5 @@
 package com.prayer.live.api.vo.req;
 
-/**
- * @Author idea
- * @Date: Created in 10:58 2023/8/6
- * @Description
- */
 public class GiftReqVO {
 
     private int giftId;

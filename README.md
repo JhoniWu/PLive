@@ -24,3 +24,7 @@
 * live-user 用户中台模块
 * live-Client 用户测试模块
 * live-account 账户模块
+
+---
+## 微服务
+本项目基于Nacos进行服务治理，基于ZipKin和Sleuth体系进行链路追踪，基于Sentinel进行流控。

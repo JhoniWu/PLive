@@ -12,6 +12,7 @@ import com.prayer.live.msg.interfaces.ISmsRpc;
 import com.prayer.live.user.dto.UserLoginDTO;
 import com.prayer.live.user.interfaces.IUserPhoneRPC;
 import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.apache.dubbo.config.annotation.DubboReference;
 import org.slf4j.Logger;
@@ -60,7 +61,7 @@ public class UserLoginServiceImpl implements IUserLoginService {
 	}
 
 	@Override
-	public WebResponseVO login(String phone, Integer code, HttpServletResponse response) {
+	public WebResponseVO login(String phone, Integer code, HttpServletRequest request, HttpServletResponse response) {
 
 		if (StringUtils.isEmpty(phone)) {
 			return WebResponseVO.errorParam("手机号不能为空");
@@ -84,8 +85,8 @@ public class UserLoginServiceImpl implements IUserLoginService {
 		logger.info("验证码校验通过，userLoginDTO is {}", userLoginDTO.toString());
 		String token = accountTokenRPC.createAndSaveLoginToken(userLoginDTO.getUserId());
 		logger.info("token is {}", token);
+		request.getSession().setAttribute(token, userLoginDTO);
 		Cookie cookie = new Cookie("prayer",token);
-
 		cookie.setDomain("127.0.0.1");
 		cookie.setPath("/");
 		//cookie有效期，一般他的默认单位是秒

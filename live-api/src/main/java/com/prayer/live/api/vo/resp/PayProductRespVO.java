@@ -1,10 +1,4 @@
 package com.prayer.live.api.vo.resp;
-
-/**
- * @Author idea
- * @Date: Created in 20:19 2023/8/19
- * @Description
- */
 public class PayProductRespVO {
 
     private String orderId;

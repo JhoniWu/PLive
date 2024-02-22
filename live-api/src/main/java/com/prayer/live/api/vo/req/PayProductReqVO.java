@@ -1,11 +1,5 @@
 package com.prayer.live.api.vo.req;
 
-
-/**
- * @Author idea
- * @Date: Created in 20:17 2023/8/19
- * @Description
- */
 public class PayProductReqVO {
 
     /**

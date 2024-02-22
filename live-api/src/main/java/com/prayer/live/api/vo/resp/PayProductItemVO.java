@@ -1,10 +1,5 @@
 package com.prayer.live.api.vo.resp;
 
-/**
- * @Author idea
- * @Date: Created in 08:31 2023/8/17
- * @Description
- */
 public class PayProductItemVO {
 
     private Long id;

@@ -43,7 +43,7 @@ public class AccountCheckFilter implements GlobalFilter, Ordered {
 		String reqUrl = request.getURI().getPath();
 		ServerHttpResponse response = exchange.getResponse();
 		HttpHeaders headers = response.getHeaders();
-		headers.add(HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN, "http://localhost:5500");
+		headers.add(HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN, "http://localhost:80");
 		headers.add(HttpHeaders.ACCESS_CONTROL_ALLOW_METHODS, "POST, GET");
 		headers.add(HttpHeaders.ACCESS_CONTROL_ALLOW_CREDENTIALS, "true");
 		headers.add(HttpHeaders.ACCESS_CONTROL_ALLOW_HEADERS, "*");
@@ -88,7 +88,6 @@ public class AccountCheckFilter implements GlobalFilter, Ordered {
 		ServerHttpRequest.Builder builder = request.mutate();
 		builder.header(GatewayHeaderEnum.USER_LOGIN_ID.getName(), String.valueOf(userId));
 		return chain.filter(exchange.mutate().request(builder.build()).build());
-
 	}
 
 	@Override

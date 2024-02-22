@@ -4,6 +4,7 @@ import com.prayer.live.api.service.IUserLoginService;
 import com.prayer.live.common.interfaces.vo.WebResponseVO;
 import com.prayer.live.user.interfaces.IUserPhoneRPC;
 import jakarta.annotation.Resource;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -34,7 +35,7 @@ public class UserLoginController {
 
 	//登录请求 验证码是否合法 -> 初始化注册/老用户登录
 	@PostMapping("/login")
-	public WebResponseVO login(@RequestParam String phone,@RequestParam Integer code, HttpServletResponse response) {
-		return IUserLoginService.login(phone,code,response);
+	public WebResponseVO login(@RequestParam String phone, @RequestParam Integer code, HttpServletRequest request,  HttpServletResponse response) {
+		return IUserLoginService.login(phone,code,request, response);
 	}
 }

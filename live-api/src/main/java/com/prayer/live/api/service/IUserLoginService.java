@@ -1,6 +1,7 @@
 package com.prayer.live.api.service;
 
 import com.prayer.live.common.interfaces.vo.WebResponseVO;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 
@@ -20,5 +21,5 @@ public interface IUserLoginService {
 	 * @param code
 	 * @return
 	 */
-	WebResponseVO login(String phone, Integer code, HttpServletResponse response);
+	WebResponseVO login(String phone, Integer code, HttpServletRequest request, HttpServletResponse response);
 }

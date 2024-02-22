@@ -51,6 +51,7 @@ public class GiftServiceImpl implements IGiftService {
 	@Override
 	public boolean send(GiftReqVO giftReqVO) {
 		int giftId = giftReqVO.getGiftId();
+		//map集合，判断本地是否有对象，如果有就返回，如果没有就rpc调用，同时注入到本地map中
 		GiftConfigDTO giftConfigDTO = giftConfigDTOCache.get(giftId, id -> giftConfigRpc.getByGiftId(id));
 		ErrorAssert.isNotNull(giftConfigDTO, ApiErrorEnum.GIFT_CONFIG_ERROR);
 		ErrorAssert.IsTrue(!giftReqVO.getReceiverId().equals(LiveRequestContext.getUserId()), ApiErrorEnum.NOT_SEND_TO_YOURSELF);

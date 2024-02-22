@@ -1,12 +1,6 @@
 package com.prayer.live.api.vo.resp;
 
 import java.util.List;
-
-/**
- * @Author idea
- * @Date: Created in 07:29 2023/8/18
- * @Description
- */
 public class PayProductVO {
 
     /**
